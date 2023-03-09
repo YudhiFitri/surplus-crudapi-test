@@ -69,7 +69,8 @@ class ProductRepo implements IProduct
   {
     $product = Product::findOrFail($id);
     if ($product) {
-      $product->products()->detach($id);
+      $product->categories()->detach($id);
+      $product->images()->detach($id);
 
       $product->delete();
       return response()->json([

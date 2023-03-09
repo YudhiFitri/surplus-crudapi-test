@@ -35,3 +35,7 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{id}', [ProductController::class, 'getProduct']);
 Route::get('/products/{id}/categories', [ProductController::class, 'getCategories']);
 Route::get('/products/{id}/images', [ProductController::class, 'getImages']);
+
+Route::post('/products', [ProductController::class, 'createProduct']);
+Route::patch('/products/{id}', [ProductController::class, 'update']);
+Route::delete('/products/{id}', [ProductController::class, 'deleteProduct']);
