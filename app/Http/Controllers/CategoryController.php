@@ -14,6 +14,26 @@ class CategoryController extends Controller
     $this->categoryRepo = $categoryRepo;
   }
 
+  /**
+   * @OA\GET(
+   *    summary="get categories list",
+   *    path="/categories",
+   *    description="Return list of categories",
+   *    tags={"Categories"},
+   *    @OA\Response(
+   *        response=200,
+   *        description="Successful operation"
+   *    ),
+   *    @OA\Response(
+   *        response=401,
+   *        description="Unauthenticated"
+   *    ),
+   *    @OA\Response(
+   *        response=403,
+   *        description="forbidden"
+   *    )
+   * )
+   */
   public function index()
   {
     $categories = $this->categoryRepo->getCategories();
