@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,12 @@ Route::get('/products/{id}/images', [ProductController::class, 'getImages']);
 Route::post('/products', [ProductController::class, 'createProduct']);
 Route::patch('/products/{id}', [ProductController::class, 'update']);
 Route::delete('/products/{id}', [ProductController::class, 'deleteProduct']);
+
+// Image
+Route::get('/images', [ImageController::class, 'index']);
+Route::get('/images/{id}', [ImageController::class, 'getImage']);
+Route::get('/images/{id}/products', [ImageController::class, 'getProducts']);
+
+Route::post('/images', [ImageController::class, 'createImage']);
+Route::patch('/images/{id}', [ImageController::class, 'updateImage']);
+Route::delete('/images/{id}', [ImageController::class, 'deleteImage']);

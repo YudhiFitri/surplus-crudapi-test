@@ -61,7 +61,7 @@ class ImageRepo implements IImage
   {
     $image = Image::findOrFail($id);
     if ($image) {
-      $image->images()->detach($id);
+      $image->products()->detach($id);
 
       $image->delete();
       return response()->json([
