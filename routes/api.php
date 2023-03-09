@@ -27,3 +27,6 @@ Route::get('/categories/{id}/products', [CategoryController::class, 'getProducts
 Route::post('/categories', [CategoryController::class, 'createCategory']);
 Route::patch('/categories/{id}', [CategoryController::class, 'update']);
 Route::delete('/categories/{id}', [CategoryController::class, 'deleteCategory']);
+
+// Product
+Route::get('/products', [ProductController::class, 'index']);
